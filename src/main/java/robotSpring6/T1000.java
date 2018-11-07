@@ -1,4 +1,4 @@
-package robotSpring5;
+package robotSpring6;
 
 import robot.interfaces.Hand;
 import robot.interfaces.Head;

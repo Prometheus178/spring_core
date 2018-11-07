@@ -1,11 +1,22 @@
-package robotSpring5;
+package robotSpring7;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import robot.BaseModel;
 import robot.interfaces.Hand;
 import robot.interfaces.Head;
 import robot.interfaces.Leg;
 import robot.interfaces.Robot;
 
-public class T1000 implements Robot {
+public class T1000 extends BaseModel implements InitializingBean, DisposableBean {
+    public void destroy() throws Exception {
+        System.out.println(this + " - method destroy()");
+    }
+
+    public void afterPropertiesSet() throws Exception {
+        System.out.println(this + " - method init()");
+    }
+
     private Head head;
     private Hand hand;
     private Leg leg;

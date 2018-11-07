@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+     <bean id="t10008" class="robotSpring7.T1000">
+    <constructor-arg value="Silver" index="0" type="java.lang.String" ></constructor-arg>
+    <constructor-arg value="2005" index="1" type="int"></constructor-arg>
+    <constructor-arg value="true" index="2" type="boolean"></constructor-arg>
+
+    <property name="head" ref="ibmHead"></property>
+    <property name="hand" ref="ibmHand"></property>
+    <property name="leg" ref="ibmLeg"></property>
+    </bean>
+    <bean id="sonyHead" class="robot.sony.SonyHead"></bean>
+    <bean id="sonyHand" class="robot.sony.SonyHand"></bean>
+    <bean id="sonyLeg" class="robot.sony.SonyLeg"></bean>
+
+    <bean id="ibmHead" class="robot.ibm.IbmHead"></bean>
+    <bean id="ibmHand" class="robot.ibm.IbmHand"></bean>
+    <bean id="ibmLeg" class="robot.ibm.IbmLeg"></bean>
+</beans>

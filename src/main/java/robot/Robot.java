@@ -9,7 +9,6 @@ public class Robot implements robot.interfaces.Robot {
     Hand hand;
     Leg leg;
 
-
     public Robot(Head head, Hand hand, Leg leg) {
         this.head = head;
         this.hand = hand;

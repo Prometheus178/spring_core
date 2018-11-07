@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd"
+        default-init-method="initObjetc">
+    <import resource="beanS7.xml"></import>
     <bean id="t1000" class="robotSpring.T1000"></bean>
 
     <bean id="t10002" class="robotSpring2.T1000">
@@ -26,7 +28,16 @@
         <property name="hand" ref="ibmHand"></property>
         <property name="leg" ref="ibmLeg"></property>
     </bean>
-    <bean id="t10005" class="robotSpring5.T1000" scope="prototype">
+    <bean id="t10005" class="robotSpring5.T1000" scope="prototype" lazy-init="true">
+        <property name="head" ref="ibmHead"></property>
+        <property name="hand" ref="ibmHand"></property>
+        <property name="leg" ref="ibmLeg"></property>
+        <constructor-arg value="Silver" index="0" type="java.lang.String" ></constructor-arg>
+        <constructor-arg value="2005" index="1" type="int"></constructor-arg>
+        <constructor-arg value="true" index="2" type="boolean"></constructor-arg>
+
+    </bean>
+    <bean id="t10006" class="beanProccessor.T1000" scope="prototype" lazy-init="true">
         <property name="head" ref="ibmHead"></property>
         <property name="hand" ref="ibmHand"></property>
         <property name="leg" ref="ibmLeg"></property>
