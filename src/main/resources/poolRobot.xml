@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="t1000pool" class="poolRobots.T1000Pool">
+        <property name="robotCollection">
+            <list>
+                <ref bean="t1000"/>
+                <bean class="poolRobots.T1000" parent="baseModel">
+                    <constructor-arg value="gold" index="3" type="String" />
+                    <constructor-arg value="2007" index="4" type="int" />
+                    <constructor-arg value="false" index="5" type="boolean" />
+                </bean>
+            </list>
+
+        </property>
+    </bean>
+    <bean id="t1000" class="poolRobots.T1000" parent="baseModel" scope="prototype"></bean>
+    <bean id="baseModel" abstract="true">
+        <constructor-arg ref="sonyHead"></constructor-arg>
+        <constructor-arg ref="sonyHand"></constructor-arg>
+        <constructor-arg ref="sonyLeg"></constructor-arg>
+    </bean>
+
+    <bean id="sonyHead" class="robot.sony.SonyHead"></bean>
+    <bean id="sonyHand" class="robot.sony.SonyHand"></bean>
+    <bean id="sonyLeg" class="robot.sony.SonyLeg"></bean>
+    </beans>

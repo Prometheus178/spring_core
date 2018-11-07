@@ -19,4 +19,5 @@
     <bean id="ibmHead" class="robot.ibm.IbmHead"></bean>
     <bean id="ibmHand" class="robot.ibm.IbmHand"></bean>
     <bean id="ibmLeg" class="robot.ibm.IbmLeg"></bean>
+
 </beans>
